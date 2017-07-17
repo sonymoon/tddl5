@@ -1,10 +1,6 @@
 package com.taobao.tddl.common.mock;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.RowIdLifetime;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class MockDataBaseMetaData implements DatabaseMetaData {
 
@@ -724,5 +720,15 @@ public class MockDataBaseMetaData implements DatabaseMetaData {
                                         String columnNamePattern) throws SQLException {
 
         return null;
+    }
+
+    @Override
+    public ResultSet getPseudoColumns(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+    }
+
+    @Override
+    public boolean generatedKeyAlwaysReturned() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
     }
 }

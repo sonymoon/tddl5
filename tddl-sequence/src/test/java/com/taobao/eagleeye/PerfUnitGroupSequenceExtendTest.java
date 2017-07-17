@@ -1,3 +1,4 @@
+/*
 package com.taobao.eagleeye;
 
 import java.sql.Connection;
@@ -21,11 +22,13 @@ import com.taobao.tddl.client.sequence.impl.GroupSequence;
 import com.taobao.tddl.client.sequence.impl.UnitGroupSequenceDao;
 import com.taobao.tddl.group.jdbc.TGroupDataSource;
 
+*/
 /**
  * @description
  * @author <a href="junyu@taobao.com">junyu</a>
  * @date 2013-5-27下午01:51:52
- */
+ *//*
+
 @Ignore("手工跑,需要单独依赖tddl-client包")
 public class PerfUnitGroupSequenceExtendTest {
 
@@ -311,3 +314,4 @@ public class PerfUnitGroupSequenceExtendTest {
         }
     }
 }
+*/

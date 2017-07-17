@@ -1,10 +1,6 @@
 package com.taobao.tddl.common.mock;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLWarning;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -330,6 +326,16 @@ public class MockStatement implements Statement {
 
     public boolean isPoolable() throws SQLException {
         return false;
+    }
+
+    @Override
+    public void closeOnCompletion() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+    }
+
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
     }
 
 }

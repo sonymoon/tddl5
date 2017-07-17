@@ -1,10 +1,7 @@
 package com.taobao.tddl.matrix.jdbc;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLWarning;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -459,6 +456,16 @@ public class TStatement implements IStatement {
     @Override
     public boolean isPoolable() throws SQLException {
         throw new SQLException("not support exception");
+    }
+
+    @Override
+    public void closeOnCompletion() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+    }
+
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
     }
 
     @Override

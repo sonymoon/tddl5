@@ -1,11 +1,7 @@
 package com.taobao.tddl.group.jdbc;
 
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.SQLWarning;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -626,6 +622,16 @@ public class TGroupStatement implements TStatement {
     @Override
     public boolean isPoolable() throws SQLException {
         throw new SQLException("not support exception");
+    }
+
+    @Override
+    public void closeOnCompletion() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+    }
+
+    @Override
+    public boolean isCloseOnCompletion() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
     }
 
     @Override

@@ -1,11 +1,6 @@
 package com.taobao.tddl.atom.jdbc;
 
-import java.sql.Clob;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.RowIdLifetime;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DatabaseMetaDataWrapper implements DatabaseMetaData {
 
@@ -741,6 +736,16 @@ public class DatabaseMetaDataWrapper implements DatabaseMetaData {
     public ResultSet getFunctionColumns(String catalog, String schemaPattern, String functionNamePattern,
                                         String columnNamePattern) throws SQLException {
         return this.targetMetaData.getFunctionColumns(catalog, schemaPattern, functionNamePattern, columnNamePattern);
+    }
+
+    @Override
+    public ResultSet getPseudoColumns(String catalog, String schemaPattern, String tableNamePattern, String columnNamePattern) throws SQLException {
+        throw new SQLFeatureNotSupportedException();
+    }
+
+    @Override
+    public boolean generatedKeyAlwaysReturned() throws SQLException {
+        throw new SQLFeatureNotSupportedException();
     }
 
     @SuppressWarnings("unchecked")

@@ -1,3 +1,4 @@
+/*
 package com.taobao.tddl.client.sequence.impl;
 
 import java.sql.Connection;
@@ -19,11 +20,13 @@ import com.taobao.tddl.client.sequence.Sequence;
 import com.taobao.tddl.client.sequence.exception.SequenceException;
 import com.taobao.tddl.group.jdbc.TGroupDataSource;
 
+*/
 /**
  * @description
  * @author <a href="junyu@taobao.com">junyu</a>
  * @date 2013-5-27下午01:51:52
- */
+ *//*
+
 @Ignore("手工跑,需要单独依赖tddl-client包")
 public class UnitGroupSequenceExtendTest {
 
@@ -203,3 +206,4 @@ public class UnitGroupSequenceExtendTest {
         }
     }
 }
+*/

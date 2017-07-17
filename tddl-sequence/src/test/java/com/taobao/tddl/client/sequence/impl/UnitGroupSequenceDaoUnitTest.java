@@ -1,3 +1,4 @@
+/*
 package com.taobao.tddl.client.sequence.impl;
 
 import java.util.ArrayList;
@@ -13,10 +14,11 @@ import org.junit.Test;
 import com.ali.unit.rule.RouterTestHelper;
 import com.taobao.tddl.client.sequence.exception.SequenceException;
 
-/**
+*
  * @description
  * @author <a href="junyu@taobao.com">junyu</a>
- */
+ 
+
 @Ignore("手工跑,需要单独依赖tddl-client包")
 public class UnitGroupSequenceDaoUnitTest {
 
@@ -129,3 +131,4 @@ public class UnitGroupSequenceDaoUnitTest {
         }
     }
 }
+*/

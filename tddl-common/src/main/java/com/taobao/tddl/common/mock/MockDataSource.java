@@ -3,11 +3,13 @@ package com.taobao.tddl.common.mock;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -343,6 +345,10 @@ public class MockDataSource implements DataSource, Cloneable {
 
     public int getLoginTimeout() throws SQLException {
         throw new NotSupportException("");
+    }
+
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        throw new SQLFeatureNotSupportedException();
     }
 
     public void setLogWriter(PrintWriter out) throws SQLException {

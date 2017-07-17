@@ -3,6 +3,8 @@ package com.taobao.tddl.group.jdbc;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -128,6 +130,11 @@ public class DataSourceWrapper implements DataSource {
 
     public int getLoginTimeout() throws SQLException {
         return wrappedDataSource.getLoginTimeout();
+    }
+
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        throw new SQLFeatureNotSupportedException();
     }
 
     public void setLogWriter(PrintWriter out) throws SQLException {

@@ -3,11 +3,13 @@ package com.taobao.tddl.atom.jdbc;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.logging.Logger;
 
 import javax.sql.DataSource;
 
@@ -403,6 +405,11 @@ public class TDataSourceWrapper implements DataSource, SnapshotValuesOutputCallB
     @Override
     public int getLoginTimeout() throws SQLException {
         return targetDataSource.getLoginTimeout();
+    }
+
+    @Override
+    public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        throw new SQLFeatureNotSupportedException();
     }
 
     /**

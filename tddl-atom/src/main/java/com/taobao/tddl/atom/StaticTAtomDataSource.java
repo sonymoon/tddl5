@@ -1,6 +1,7 @@
 package com.taobao.tddl.atom;
 
 import java.sql.SQLException;
+import java.sql.SQLFeatureNotSupportedException;
 import java.util.Map;
 
 import javax.sql.DataSource;
@@ -205,5 +206,10 @@ public class StaticTAtomDataSource extends AbstractTAtomDataSource {
     @Override
     public TAtomDbTypeEnum getDbType() {
         return confDO.getDbTypeEnum();
+    }
+
+    @Override
+    public java.util.logging.Logger getParentLogger() throws SQLFeatureNotSupportedException {
+        throw new SQLFeatureNotSupportedException();
     }
 }
